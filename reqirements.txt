@@ -1,0 +1,3 @@
+scikit-learn=1.6.0
+numpy=1.23.5
+mysql-connector-python=8.0.33

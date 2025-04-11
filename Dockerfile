@@ -1,0 +1,19 @@
+# USE THE BASE IMAGE OF PYTHON
+
+FROM python:3.9-slim
+
+# SET THE WORKING DIRECTORY
+WORKDIR /app
+
+# COPY THE REQUIREMENTS FILE
+COPY reqirements.txt .
+
+# INSTALL THE DEPENDENCIES
+RUN pip instal --no-cache-dir -r reqirements.txt
+
+# EXPOSE THE PORT THE APP WILL RUN ON
+
+EXPOSE 5000
+
+# COMMAND TO RUN TEHE APP
+CMD ["python", "app.py"]
