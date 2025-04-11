@@ -15,5 +15,4 @@ create table if not exists requests(
     api_version varchar(50),
     client_id VARCHAR(255),
     request_id VARCHAR(255)
-
 );
