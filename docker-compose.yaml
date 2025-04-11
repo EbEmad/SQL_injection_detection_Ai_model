@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  mysql_db:
+    image: mysql:8.0    # use MYSQL 8.0 image
+    container_name: mysql_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=root # set root password
+      - MYSQL_DATABASE=test_db # create a test database
+      - MYSQL_USER=test_user # create a test user
+      - MYSQL_PASSWORD=test_password # set test user password
+    ports:
+      - "3306:3306" # expose port 3306
+    volumes:
+      - mysql_data:/var/lib/mysql # persist data in a named volume
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # initialize database with a script
+
+volumes:
+  mysql_data:
+    driver: local # use local driver for the volume   
