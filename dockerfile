@@ -15,4 +15,4 @@ RUN pip install --no-cache-dir -r reqirements.txt
 EXPOSE 5000
 
 # COMMAND TO RUN TEHE APP
-CMD ["python"]
+CMD ["bash", "-l"]
