@@ -11,7 +11,6 @@ services:
     ports:
       - "3306:3306" # expose port 3306
     volumes:
-      - mysql_data:/var/lib/mysql # persist data in a named volume
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql # initialize database with a script
   python_app:
     build:
@@ -27,8 +26,18 @@ services:
       - DB_PASSWORD=test_password # set the database password
       - DB_NAME=test_db # set the database name
     volumes:
-      - ./scripts :/app # mount the app directory
-
-volumes:
-  mysql_data:
-    driver: local # use local driver for the volume   
+      - .:/app # mount the app directory
+    ports:
+      - "5000:5000" # expose port 5000
+    command: uvicorn app:app --host 0.0.0.0 --port 5000 --reload
+    develop:
+      watch:
+        - action: rebuild
+          path: dockerfile
+        - action: rebuild
+          path: reqirements.txt
+        - action: rebuild
+          path: docker-compose.yml
+        - action: rebuild
+          path: app.py
+ 

@@ -6,7 +6,8 @@ WORKDIR /app
 
 # COPY THE REQUIREMENTS FILE
 COPY reqirements.txt .
-
+COPY ./run.sh .
+RUN chmod +x /app/run.sh
 # INSTALL THE DEPENDENCIES
 RUN pip install --no-cache-dir -r reqirements.txt
 
@@ -15,4 +16,4 @@ RUN pip install --no-cache-dir -r reqirements.txt
 EXPOSE 5000
 
 # COMMAND TO RUN TEHE APP
-CMD ["bash", "-l"]
+CMD ["./run.sh"]
