@@ -10,6 +10,7 @@ COPY ./run.sh .
 RUN chmod +x /app/run.sh
 # INSTALL THE DEPENDENCIES
 RUN pip install --no-cache-dir -r reqirements.txt
+WORKDIR /app/scripts
 
 # EXPOSE THE PORT THE APP WILL RUN ON
 

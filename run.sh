@@ -4,7 +4,7 @@
 source /opt/venv/vin/activate
 
 # Move to the app directory
-cd /app
+cd /app/scripts
 
 # Set default values if env vars aren't provided
 RUN_PORT=${RUN_PORT:-5000}

@@ -13,7 +13,7 @@ model = joblib.load('./sql_injection_model.pkl')
 vectorizer = joblib.load('./tfidf_vectorizer.pkl')
 # DB config
 db_config = {
-    'host': 'localhost',
+    'host': 'mysql_db',
     'user': 'test_user',
     'password': 'test_password',
     'database': 'test_db'
@@ -31,6 +31,7 @@ def log_request_to_db(source_ip, request_type, endpoint, response_time, user_age
         connection = mysql.connector.connect(**db_config)
         cursor = connection.cursor()
         cursor.execute("SELECT 1")
+        _ = cursor.fetchone()
         print("Database connected successfully!")
         query = """
         INSERT INTO requests (
