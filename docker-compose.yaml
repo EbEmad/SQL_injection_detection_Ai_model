@@ -11,7 +11,7 @@ services:
     ports:
       - "3306:3306" # expose port 3306
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # initialize database with a script
+      - ./db_init/init.sql:/docker-entrypoint-initdb.d/init.sql # initialize database with a script
   python_app:
     build:
       context: . # build the Dockerfile in the current directory
