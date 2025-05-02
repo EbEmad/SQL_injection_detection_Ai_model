@@ -19,7 +19,7 @@ This project focuses on building an **AI-powered SQL Injection detection model**
 ✅ **Feature Engineering**: Utilizes **TF-IDF Vectorization** to process textual input.  
 ✅ **Data Augmentation**: Incorporates additional SQL injection datasets for better generalization.  
 ✅ **Hyperparameter Tuning**: Optimized using **Grid Search** and **Random Search**.  
-✅ **Model Deployment**: Flask server with a REST API for real-time predictions.  
+✅ **Model Deployment**: Fast server with a REST API for real-time predictions.  
 ✅ **Logging System**: Every request is stored in a MySQL database for analysis.  
 
 ---
