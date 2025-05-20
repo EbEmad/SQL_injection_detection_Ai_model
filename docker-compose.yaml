@@ -26,7 +26,11 @@ services:
       - DB_PASSWORD=test_password # set the database password
       - DB_NAME=test_db # set the database name
     volumes:
-      - .:/app # mount the app directory
+      - ./scripts:/app/scripts 
+      - ./models:/app/models
+      - ./db_init:/app/db_init
+      - ./dataset:/app/dataset
+
     ports:
       - "5000:5000" # expose port 5000
     command: uvicorn app:app --host 0.0.0.0 --port 5000 --reload

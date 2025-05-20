@@ -9,8 +9,8 @@ import mysql.connector
 app = FastAPI()
 
 # Load model and vectorizer
-model = joblib.load('./sql_injection_model.pkl')
-vectorizer = joblib.load('./tfidf_vectorizer.pkl')
+model = joblib.load('./models/sql_injection_model.pkl')
+vectorizer = joblib.load('./models/tfidf_vectorizer.pkl')
 # DB config
 db_config = {
     'host': 'mysql_db',

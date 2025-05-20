@@ -1,20 +1,19 @@
 # USE THE BASE IMAGE OF PYTHON
-FROM  python:latest
+FROM python:3.11-slim
 
 # SET THE WORKING DIRECTORY
 WORKDIR /app
 
 # COPY THE REQUIREMENTS FILE
 COPY reqirements.txt .
-COPY ./run.sh .
-RUN chmod +x /app/run.sh
 # INSTALL THE DEPENDENCIES
 RUN pip install --no-cache-dir -r reqirements.txt
-WORKDIR /app/scripts
-
+COPY run.sh /app/run.sh
+RUN chmod +x run.sh
+# COPY THE SOURCE CODE
+COPY . .
 # EXPOSE THE PORT THE APP WILL RUN ON
-
 EXPOSE 5000
 
 # COMMAND TO RUN TEHE APP
-CMD ["./run.sh"]
+CMD [ "bash","run.sh" ]
