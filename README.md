@@ -1,6 +1,6 @@
 # SQL Injection Detection AI Model  
 
-## 📌 Introduction  
+##  Introduction  
 SQL Injection (SQLi) is a type of attack where malicious SQL statements are injected into an application’s database query, potentially allowing attackers to manipulate, extract, or delete data. There are several types of SQL injection attacks, including:  
 
 - **Union-Based SQLi**: Exploits the `UNION` operator to retrieve data from different tables.  
@@ -11,32 +11,32 @@ SQL Injection (SQLi) is a type of attack where malicious SQL statements are inje
 
 ---
 
-## 🔍 Project Overview  
+##  Project Overview  
 This project focuses on building an **AI-powered SQL Injection detection model** that classifies input queries as either **benign (clean) or malicious (SQLi)**. The model is deployed via a **Flask API**, running in a **Docker container**, alongside a **MySQL database** to log all requests.  
 
 ### **Key Features:**  
-✅ **Machine Learning Model**: A `RandomForestClassifier` trained on an enhanced dataset.  
-✅ **Feature Engineering**: Utilizes **TF-IDF Vectorization** to process textual input.  
-✅ **Data Augmentation**: Incorporates additional SQL injection datasets for better generalization.  
-✅ **Hyperparameter Tuning**: Optimized using **Grid Search** and **Random Search**.  
-✅ **Model Deployment**: Fast server with a REST API for real-time predictions.  
-✅ **Logging System**: Every request is stored in a MySQL database for analysis.  
+ **Machine Learning Model**: A `RandomForestClassifier` trained on an enhanced dataset.  
+ **Feature Engineering**: Utilizes **TF-IDF Vectorization** to process textual input.  
+ **Data Augmentation**: Incorporates additional SQL injection datasets for better generalization.  
+ **Hyperparameter Tuning**: Optimized using **Grid Search** and **Random Search**.  
+ **Model Deployment**: Fast server with a REST API for real-time predictions.  
+ **Logging System**: Every request is stored in a MySQL database for analysis.  
 
 ---
 
-## 🏗️ Project Structure  
+##  Project Structure  
 ```
-📂 **SQLi-Detection**  
-├── 📜 app.py # FastAPI API for SQLi detection
-├── 📜 docker-compose.yml # Docker setup for Fast & MySQL
-├── 📜 init.sql # SQL script for logging requests in MySQL
-├── 📜 sql_injection_model.pkl # Trained ML model
-├── 📜 tfidf_vectorizer.pkl # Pretrained TF-IDF vectorizer
-├── 📜 README.md # Project documentation
+ **SQLi-Detection**  
+├──  app.py # FastAPI API for SQLi detection
+├──  docker-compose.yml # Docker setup for Fast & MySQL
+├──  init.sql # SQL script for logging requests in MySQL
+├──  sql_injection_model.pkl # Trained ML model
+├──  tfidf_vectorizer.pkl # Pretrained TF-IDF vectorizer
+├──  README.md # Project documentation
 ```
 ---
 
-## 📊 Machine Learning Pipeline  
+## Machine Learning Pipeline  
 
 1. **Data Preprocessing**  
    - Loaded a dataset containing SQL injection samples and benign inputs.  
@@ -64,7 +64,7 @@ This project focuses on building an **AI-powered SQL Injection detection model**
 
 ---
 
-## 🚀 Running the Project  
+##  Running the Project  
 
 ### **Step 1: Clone the Repository**  
 ```bash
@@ -94,14 +94,14 @@ curl -X POST "http://localhost:5000/predict" -H "Content-Type: application/json"
 🔹 Where 1 = SQLi Detected and 0 = Clean Query.
 
 
-🛠 Technologies Used
+ Technologies Used
 ```
 🔹 Python (Fast, Sklearn, Pandas, Numpy) – Model development & API.
 🔹 Machine Learning (Random Forest, TF-IDF) – Feature extraction & classification.
 🔹 Docker – Containerized deployment.
 🔹 MySQL – Logging requests & responses.
 ```
-📌 Conclusion
+ Conclusion
 This project provides a real-time SQL Injection detection system powered by machine learning. With high accuracy and fast performance, it can be easily integrated into web applications, firewalls, and security systems to prevent SQLi attacks.
 
 🔹 Future Improvements:
